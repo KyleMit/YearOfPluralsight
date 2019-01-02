@@ -40,7 +40,7 @@ var allDays = getAllDaysInYear(2019);
 
 // add missing days
 allDays.forEach(day => {
-    var logExists = data.logs.some(log => new Date(log.date) == day)
+    var logExists = data.logs.some(log => new Date(log.date).toLocaleDateString() == day.toLocaleDateString())
     if (!logExists) {
         data.logs.push({
             date: day.toLocaleDateString(),
