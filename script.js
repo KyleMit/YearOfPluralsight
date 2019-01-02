@@ -102,3 +102,24 @@ function getWeekNumber(myDate){
     var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
     return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
   };
+
+
+  window.addEventListener('scroll', function(ev) {
+
+    var topElement
+    var listItems = document.querySelectorAll(".id-wrapper")
+    for (i=0; i<listItems.length; i++) {
+        var el = listItems[i]
+        var height = el.getBoundingClientRect().top
+        if (height > 0) {
+            topElement = el;
+            break;
+        }
+    }
+
+    document.querySelectorAll(".cell.active").forEach(function(el) { el.classList.remove('active')});
+    document.querySelectorAll(".id-wrapper.active").forEach(function(el) { el.classList.remove('active')});
+
+    document.querySelector(".cell[href='#"+topElement.id+"']").classList.add('active')
+    topElement.classList.add('active')
+});
