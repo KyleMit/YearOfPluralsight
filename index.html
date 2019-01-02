@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Year of Pluralsight</title>
+
+    <!-- CSS -->
+   <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <div id="app" class="container-fluid">
+        <div class="header">
+            <h2>Year of Pluralsight</h2>
+            <h3>Coding & Cardio</h3>
+        </div>
+        <div class="grid">
+            <div v-for="week in byWeek" class="column">
+                <a v-for="log in week" 
+                    class="cell" :class="{active: log.minutes}"
+                    :href="'#' + log.date">
+            </a>
+            </div>
+        </div>
+
+        <div class="list">
+            <template v-for="(week, wkNum) in byWeek" class="column">
+                <h5>Week {{wkNum + 1}}</h5>
+
+                <div v-for="log in week" :id="log.date"
+                     class="id-wrapper " >
+                     <div class="list-item"  :class="{active: log.minutes}">
+                        <div class="date">{{log.date}}</div>
+                        <div class="coding" v-if="log.code">
+                            {{log.code.title}}
+                        </div>
+                        <div class="cardio" v-if="log.cardio">
+                            {{log.cardio.type}}
+                        </div>
+                    </div>
+                </div>
+            </template>
+           
+        </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html> 

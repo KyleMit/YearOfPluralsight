@@ -1,0 +1,48 @@
+
+body {
+    margin: 0;
+}
+.header {
+    background: #f5f4f4;
+}
+.header * {
+    text-align: center;
+    margin: 0;
+}
+
+
+.grid {
+    position: sticky;
+    top: 0;
+    background: #f5f4f4;
+    text-align: center;
+    padding: 5px;
+}
+.grid .cell {
+    width: 10px;
+    height: 10px;
+    background: gainsboro;
+    border-radius: 2px;
+    margin: 1px;
+    display: block;
+}
+.grid .cell.active {
+    background: green;
+}
+.grid .column {
+    /* float:left; */
+    display: inline-block;
+}
+
+.id-wrapper {
+    margin-top: -92px;
+    padding-top: 92px;
+}
+:target .list-item {
+    border: 1px solid blue;
+}
+.list-item {
+    margin:5px;
+    padding:5px;
+    box-shadow: 1px 1px 1px 1px #b7b7b7;
+}

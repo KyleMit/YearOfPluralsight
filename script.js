@@ -1,0 +1,104 @@
+Vue.config.devtools = true;
+
+// add log info
+var data = {
+    logs: [
+        {
+            date: '1/1/2019',
+            minutes: 60,
+            code: {
+                href: "https://app.pluralsight.com/library/courses/vuejs-fundamentals/table-of-contents",
+                title: "Vue.js Fundamentals",
+                author: "Jim Cooper"
+            },
+            cardio: {
+                href: "https://www.strava.com/activities/2049428407",
+                distance: "3.92mi",
+                type: "Treadmill"
+            }
+        }
+    ]
+}
+
+
+// add the rest of the days for the year
+var allDays = getAllDaysInYear(2019);
+
+// add missing days
+allDays.forEach(day => {
+    var logExists = data.logs.some(log => new Date(log.date) == day)
+    if (!logExists) {
+        data.logs.push({
+            date: day.toLocaleDateString(),
+            minutes: 0
+        })
+    }
+})
+
+
+var app = new Vue({
+  el: "#app",
+  data: data,
+  computed: {
+      byWeek: function () {
+         var log = this.logs
+         
+         var weeks = []
+         var week = []
+         var curWeekNum = 1
+         for (let i = 0; i < this.logs.length; i++) {
+             const log = this.logs[i];
+
+             // todo get week # of date
+             const wkNum = getWeekNumber(new Date(log.date))
+             //console.log(wkNum, log.date)
+
+             if (wkNum != curWeekNum) {
+                curWeekNum = wkNum
+                weeks.push(week) // add old
+                week = [] // create new
+             } 
+             
+             week.push(log)
+         }
+
+      
+         return weeks;
+      }
+  },
+  methods: {},
+  mounted: function() {
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+// https://stackoverflow.com/a/19444023/1366033
+function getAllDaysInYear(year) {
+    var start = new Date(year, 0, 1);
+    var end =  new Date(year + 1, 0, 1);
+
+    var array = [];
+    while(start < end){
+        array.push(new Date(start));
+        start.setDate(start.getDate() + 1)
+    }
+    return array;
+}
+
+// https://stackoverflow.com/a/6117889/1366033
+function getWeekNumber(myDate){
+    var d = new Date(Date.UTC(myDate.getFullYear(), myDate.getMonth(), myDate.getDate()));
+    var dayNum = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
+  };
