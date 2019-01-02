@@ -13,7 +13,21 @@ var data = {
             },
             cardio: {
                 href: "https://www.strava.com/activities/2049428407",
-                distance: "3.92mi",
+                distance: "3.92 mi",
+                type: "Treadmill"
+            }
+        },
+        {
+            date: '1/2/2019',
+            minutes: 30,
+            code: {
+                href: "https://app.pluralsight.com/library/courses/vuejs-fundamentals/table-of-contents",
+                title: "Vue.js Fundamentals",
+                author: "Jim Cooper"
+            },
+            cardio: {
+                href: "https://www.strava.com/activities/2051006605",
+                distance: "2 mi",
                 type: "Treadmill"
             }
         }
