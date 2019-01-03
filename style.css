@@ -52,6 +52,7 @@ body {
     .grid .cell {
         width: 8px;
         height: 8px;
+        border-radius: 1px;
     }
 }
 @media (max-width: 530px) { 
@@ -70,6 +71,7 @@ body {
     .grid .cell {
         width: 5px;
         height: 5px;
+        border-radius: 0px;
     }
 }
 
@@ -108,18 +110,25 @@ body {
 }
 
 .list h5 {
-    margin: 0 5px;
+    margin: 15px 5px 10px 5px;
     color: #333333;
 }
 
 .list-item {
     margin:5px;
     padding:5px;
-    box-shadow: 1px 1px 1px 1px #aaaaaa;
+    /* box-shadow: 1px 1px 1px 1px #aaaaaa; */
+    border-bottom: 1px solid #b1b1b1;
+    margin: 0;
     
 }
-.active .list-item {
-    box-shadow: 1px 1px 1px 1px #aaaaff;
+.list-item .date {
+    font-weight: bold;
+    color: #3c3939;
+}
+.active .list-item .date {
+    /* box-shadow: 1px 1px 1px 1px #aaaaff; */
+    color: #1f1fc1;
 }
 
 
