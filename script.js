@@ -84,7 +84,7 @@ var app = new Vue({
     mounted: function () {
         this.$nextTick(function () {
           // if there's not a hash, default to today
-          if (window.locaation.hash) {
+          if (window.location.hash) {
             window.location.hash = (new Date()).toLocaleDateString();
           }
         })
