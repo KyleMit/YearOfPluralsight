@@ -50,6 +50,8 @@ allDays.forEach(day => {
 })
 
 
+Vue.use(VueSmoothScroll)
+
 var app = new Vue({
     el: "#app",
     data: data,

@@ -20,13 +20,17 @@
                 <a href="index.html"> Year of Pluralsight</a>
             </h2>
             <h3>
-                <a href="https://app.pluralsight.com/profile/kyle-mitofsky" class="header-coding">&lt;Coding&gt;</a> &
+                <a href="https://app.pluralsight.com/profile/kyle-mitofsky" class="header-coding">
+                    <span class="syntax-bracket">&lt;</span><!--
+                 --><span class="syntax-string">Coding</span><!--
+                 --><span class="syntax-bracket">&gt;</span>
+                </a> &
                 <a href="https://www.strava.com/athletes/15675073" class="header-cardio">Cardio</a>
             </h3>
         </div>
         <div class="grid">
             <div v-for="week in byWeek" class="column">
-                <a v-for="log in week" 
+                <a v-for="log in week" v-smooth-scroll
                     class="cell" :class="{completed: log.minutes}"
                     :href="'#' + log.date"
                     v-cloak>
@@ -60,6 +64,7 @@
 
     <!-- Optional JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
+    <script src="https://unpkg.com/vue-smooth-scroll@1.0.11"></script> 
     <script src="script.js?v=2"></script>
 </body>
 

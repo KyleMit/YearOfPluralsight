@@ -13,6 +13,7 @@ body {
 }
 .header-coding {
     font-family: 'Ubuntu Mono', monospace;
+    font-size: 1.1em;
 }
 .header a,
 .header a:hover {
@@ -119,4 +120,13 @@ body {
 }
 .active .list-item {
     box-shadow: 1px 1px 1px 1px #aaaaff;
+}
+
+
+.syntax-bracket {
+    color: #00f
+}
+
+.syntax-string {
+    color: #a31515
 }
