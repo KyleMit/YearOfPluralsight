@@ -37,38 +37,43 @@ allDays.forEach(day => {
 
 
 var app = new Vue({
-  el: "#app",
-  data: data,
-  computed: {
-      byWeek: function () {
-         var log = this.logs
-         
-         var weeks = []
-         var week = []
-         var curWeekNum = 1
-         for (let i = 0; i < this.logs.length; i++) {
-             const log = this.logs[i];
+    el: "#app",
+    data: data,
+    computed: {
+        byWeek: function () {
+            var log = this.logs
 
-             // todo get week # of date
-             const wkNum = getWeekNumber(new Date(log.date))
-             //console.log(wkNum, log.date)
+            var weeks = []
+            var week = []
+            var curWeekNum = 1
+            for (let i = 0; i < this.logs.length; i++) {
+                const log = this.logs[i];
 
-             if (wkNum != curWeekNum) {
-                curWeekNum = wkNum
-                weeks.push(week) // add old
-                week = [] // create new
-             } 
-             
-             week.push(log)
-         }
+                // todo get week # of date
+                const wkNum = getWeekNumber(new Date(log.date))
+                //console.log(wkNum, log.date)
 
-      
-         return weeks;
+                if (wkNum != curWeekNum) {
+                    curWeekNum = wkNum
+                    weeks.push(week) // add old
+                    week = [] // create new
+                }
+
+                week.push(log)
+            }
+
+
+            return weeks;
+        }
+    },
+    methods: {},
+    mounted: function () {
+        this.$nextTick(function () {
+          // Code that will run only after the
+          // entire view has been rendered
+          window.location.hash = (new Date()).toLocaleDateString();
+        })
       }
-  },
-  methods: {},
-  mounted: function() {
-  }
 });
 
 
@@ -84,10 +89,10 @@ var app = new Vue({
 // https://stackoverflow.com/a/19444023/1366033
 function getAllDaysInYear(year) {
     var start = new Date(year, 0, 1);
-    var end =  new Date(year + 1, 0, 1);
+    var end = new Date(year + 1, 0, 1);
 
     var array = [];
-    while(start < end){
+    while (start < end) {
         array.push(new Date(start));
         start.setDate(start.getDate() + 1)
     }
@@ -95,20 +100,20 @@ function getAllDaysInYear(year) {
 }
 
 // https://stackoverflow.com/a/6117889/1366033
-function getWeekNumber(myDate){
+function getWeekNumber(myDate) {
     var d = new Date(Date.UTC(myDate.getFullYear(), myDate.getMonth(), myDate.getDate()));
     var dayNum = d.getUTCDay() || 7;
     d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
-    return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
-  };
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+    return Math.ceil((((d - yearStart) / 86400000) + 1) / 7)
+};
 
-
-  window.addEventListener('scroll', function(ev) {
+//https://stackoverflow.com/a/35571753/1366033
+window.addEventListener('scroll', function (ev) {
 
     var topElement
     var listItems = document.querySelectorAll(".id-wrapper")
-    for (i=0; i<listItems.length; i++) {
+    for (i = 0; i < listItems.length; i++) {
         var el = listItems[i]
         var height = el.getBoundingClientRect().top
         if (height > 0) {
@@ -117,9 +122,9 @@ function getWeekNumber(myDate){
         }
     }
 
-    document.querySelectorAll(".cell.active").forEach(function(el) { el.classList.remove('active')});
-    document.querySelectorAll(".id-wrapper.active").forEach(function(el) { el.classList.remove('active')});
+    document.querySelectorAll(".cell.active").forEach(function (el) { el.classList.remove('active') });
+    document.querySelectorAll(".id-wrapper.active").forEach(function (el) { el.classList.remove('active') });
 
-    document.querySelector(".cell[href='#"+topElement.id+"']").classList.add('active')
+    document.querySelector(".cell[href='#" + topElement.id + "']").classList.add('active')
     topElement.classList.add('active')
 });
