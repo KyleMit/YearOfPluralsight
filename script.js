@@ -51,6 +51,7 @@ allDays.forEach(day => {
 
 
 Vue.use(VueSmoothScroll)
+Vue.use(VTooltip)
 
 var app = new Vue({
     el: "#app",

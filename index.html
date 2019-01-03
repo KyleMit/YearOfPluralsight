@@ -8,6 +8,7 @@
 
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="tooltip.css">
     <link rel="stylesheet" href="style.css?v=2">
 
 </head>
@@ -33,6 +34,7 @@
                 <a v-for="log in week" v-smooth-scroll
                     class="cell" :class="{completed: log.minutes}"
                     :href="'#' + log.date"
+                    v-tooltip="log.minutes + ' minutes on ' + log.date"
                     v-cloak>
             </a>
             </div>
@@ -65,6 +67,7 @@
     <!-- Optional JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
     <script src="https://unpkg.com/vue-smooth-scroll@1.0.11"></script> 
+    <script src="https://unpkg.com/v-tooltip"></script>
     <script src="script.js?v=2"></script>
 </body>
 

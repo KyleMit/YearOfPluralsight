@@ -5,6 +5,7 @@ A New Years Resolution Pledge to go to the gym and watch pluralsight videos ever
 ## Dependencies
 
 * [vue-smoothscroll](https://github.com/Teddy-Zhu/vue-smoothscroll)
+* [v-tooltip](https://github.com/Akryum/v-tooltip)
 
 ## Feature Backlog
 
