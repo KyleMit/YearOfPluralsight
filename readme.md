@@ -13,6 +13,7 @@ A New Years Resolution Pledge to go to the gym and watch pluralsight videos ever
 - [x] Update Site Font
 - [x] Navigate to current day on start
 - [x] Smooth Scrolling when naviating to item
+- [ ] Update list item contents
 - [ ] Add tooltip to items
 - [ ] Add axis labels
 - [ ] Add Site Logo
