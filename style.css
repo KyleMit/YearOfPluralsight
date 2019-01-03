@@ -1,7 +1,7 @@
 
 body {
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .header {
     background: #fbfafa;
@@ -11,9 +11,11 @@ body {
     text-align: center;
     margin: 0;
 }
+.header h3 {
+    opacity: .7;
+}
 .header-coding {
-    font-family: 'Ubuntu Mono', monospace;
-    font-size: 1.1em;
+    font-family: 'PT Mono', monospace;
 }
 .header a,
 .header a:hover {
@@ -41,33 +43,33 @@ body {
     display: none
 }
 
-@media (max-width: 650px) { 
+@media (max-width: 640px) { 
     .grid .cell {
         width: 9px;
         height: 9px;
     }
 }
 
-@media (max-width: 585px) { 
+@media (max-width: 590px) { 
     .grid .cell {
         width: 8px;
         height: 8px;
         border-radius: 1px;
     }
 }
-@media (max-width: 530px) { 
+@media (max-width: 540px) { 
     .grid .cell {
         width: 7px;
         height: 7px;
     }
 }
-@media (max-width: 480px) { 
+@media (max-width: 490px) { 
     .grid .cell {
         width: 6px;
         height: 6px;
     }
 }
-@media (max-width: 430px) { 
+@media (max-width: 440px) { 
     .grid .cell {
         width: 5px;
         height: 5px;
@@ -120,20 +122,29 @@ body {
     /* box-shadow: 1px 1px 1px 1px #aaaaaa; */
     border-bottom: 1px solid #b1b1b1;
     margin: 0;
-    
+    display: flex;
 }
 .list-item .date {
     font-weight: bold;
     color: #3c3939;
+    width: 65px;
 }
 .active .list-item .date {
     /* box-shadow: 1px 1px 1px 1px #aaaaff; */
     color: #1f1fc1;
 }
-
-
+.list-item .coding,
+.list-item .cardio {
+    flex-grow: 1;
+    padding: 0px 10px;
+}
 .syntax-bracket {
     color: #00f
+}
+@media (max-width: 500px) { 
+    .list-item {
+        flex-direction: column;
+    }    
 }
 
 .syntax-string {
