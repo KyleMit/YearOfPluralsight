@@ -7,7 +7,8 @@
     <title>Year of Pluralsight</title>
 
     <!-- CSS -->
-   <link rel="stylesheet" href="style.css?v=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1">
 
 </head>
 
@@ -19,15 +20,16 @@
                 <a href="index.html"> Year of Pluralsight</a>
             </h2>
             <h3>
-                <a href="https://app.pluralsight.com/profile/kyle-mitofsky">Coding</a> &
-                <a href="https://www.strava.com/athletes/15675073">Cardio</a>
+                <a href="https://app.pluralsight.com/profile/kyle-mitofsky" class="header-coding">&lt;Coding&gt;</a> &
+                <a href="https://www.strava.com/athletes/15675073" class="header-cardio">Cardio</a>
             </h3>
         </div>
         <div class="grid">
             <div v-for="week in byWeek" class="column">
                 <a v-for="log in week" 
                     class="cell" :class="{completed: log.minutes}"
-                    :href="'#' + log.date">
+                    :href="'#' + log.date"
+                    v-cloak>
             </a>
             </div>
         </div>

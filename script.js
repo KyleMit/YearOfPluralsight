@@ -83,9 +83,10 @@ var app = new Vue({
     methods: {},
     mounted: function () {
         this.$nextTick(function () {
-          // Code that will run only after the
-          // entire view has been rendered
-          window.location.hash = (new Date()).toLocaleDateString();
+          // if there's not a hash, default to today
+          if (window.locaation.hash) {
+            window.location.hash = (new Date()).toLocaleDateString();
+          }
         })
       }
 });
@@ -130,7 +131,7 @@ window.addEventListener('scroll', function (ev) {
     for (i = 0; i < listItems.length; i++) {
         var el = listItems[i]
         var height = el.getBoundingClientRect().top
-        if (height > 0) {
+        if (height >= -15) {
             topElement = el;
             break;
         }
