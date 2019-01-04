@@ -12,15 +12,23 @@ body {
     margin: 0;
 }
 .header h3 {
-    opacity: .7;
+    margin-top: -5px;
+    color: #777777;
 }
 .header-coding {
     font-family: 'PT Mono', monospace;
+}
+.header-amp {
+    padding: 0px 5px;
 }
 .header a,
 .header a:hover {
     color: #3c3c3c;
     text-decoration: none;
+}
+.header h3 a,
+.header h3 a:hover {
+    color: #777777;
 }
 
 .grid {
@@ -31,13 +39,14 @@ body {
     padding: 5px;
 }
 .grid .cell {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: gainsboro;
     border-radius: 2px;
     margin: 1px;
     display: block;
     transition: width .5s ease, height .5s ease;
+    border: 1px solid transparent;
 }
 .grid .cell[v-cloak] {
     display: none
@@ -45,34 +54,34 @@ body {
 
 @media (max-width: 640px) { 
     .grid .cell {
-        width: 9px;
-        height: 9px;
+        width: 7px;
+        height: 7px;
     }
 }
 
 @media (max-width: 590px) { 
     .grid .cell {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         border-radius: 1px;
     }
 }
 @media (max-width: 540px) { 
     .grid .cell {
-        width: 7px;
-        height: 7px;
+        width: 5px;
+        height: 5px;
     }
 }
 @media (max-width: 490px) { 
     .grid .cell {
-        width: 6px;
-        height: 6px;
+        width: 4px;
+        height: 4px;
     }
 }
 @media (max-width: 440px) { 
     .grid .cell {
-        width: 5px;
-        height: 5px;
+        width: 3px;
+        height: 3px;
         border-radius: 0px;
     }
 }
@@ -80,14 +89,14 @@ body {
 
 @media (max-width: 390px) { 
     .grid .cell {
-        width: 4px;
-        height: 4px;
+        width: 2px;
+        height: 2px;
     }
 }
 @media (max-width: 330px) { 
     .grid .cell {
-        width: 3px;
-        height: 3px;
+        width: 1px;
+        height: 1px;
     }
 }
 
@@ -95,7 +104,7 @@ body {
     background: green;
 }
 .grid .cell.active {
-    box-shadow: 0px 0px 1px 1px #aaaaff;
+    border: 1px solid #1f1fc1;
 }
 .grid .column {
     /* float:left; */
@@ -135,11 +144,11 @@ body {
 }
 .list-item .coding,
 .list-item .cardio {
-    flex-grow: 1;
+    flex: 1 1 0;
     padding: 0px 10px;
 }
 .syntax-bracket {
-    color: #00f
+    color: #322ffe
 }
 @media (max-width: 500px) { 
     .list-item {
@@ -148,5 +157,5 @@ body {
 }
 
 .syntax-string {
-    color: #a31515
+    color: #b44646
 }

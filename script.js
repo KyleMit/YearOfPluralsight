@@ -30,6 +30,20 @@ var data = {
                 distance: "2 mi",
                 type: "Treadmill"
             }
+        },
+        {
+            date: '1/3/2019',
+            minutes: 45,
+            code: {
+                href: "https://app.pluralsight.com/library/courses/nodejs-dotnet-developers/table-of-contents",
+                title: "Node.js for .NET Developers",
+                author: "Shawn Wildermuth"
+            },
+            cardio: {
+                href: "https://www.strava.com/activities/2053142561",
+                distance: "",
+                type: "Elliptical"
+            }
         }
     ]
 }
