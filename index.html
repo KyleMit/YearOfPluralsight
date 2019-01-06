@@ -35,7 +35,7 @@
                 <a v-for="log in week" v-smooth-scroll
                     class="cell" :class="{completed: log.minutes}"
                     :href="'#' + log.date"
-                    v-tooltip="log.minutes + ' minutes on ' + log.date"
+                    v-tooltip="tooltip(log)"
                     v-cloak>
             </a>
             </div>
@@ -69,7 +69,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
     <script src="https://unpkg.com/vue-smooth-scroll@1.0.11"></script> 
     <script src="https://unpkg.com/v-tooltip"></script>
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=2019-01-06"></script>
 </body>
 
 </html> 

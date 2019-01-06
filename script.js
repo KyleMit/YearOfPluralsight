@@ -44,6 +44,34 @@ var data = {
                 distance: "",
                 type: "Elliptical"
             }
+        },
+        {
+            date: '1/4/2019',
+            minutes: 30,
+            code: {
+                href: "https://app.pluralsight.com/library/courses/nodejs-dotnet-developers/table-of-contents",
+                title: "Node.js for .NET Developers",
+                author: "Shawn Wildermuth"
+            },
+            cardio: {
+                href: "https://www.strava.com/activities/2055311285",
+                distance: "1.5 mi",
+                type: "Treadmill"
+            }
+        },
+        {
+            date: '1/5/2019',
+            minutes: 60,
+            code: {
+                href: "https://app.pluralsight.com/library/courses/aws-nodejs-serverless-framework-using/table-of-contents",
+                title: "Using the Serverless Framework with Node.js on AWS",
+                author: "Fernando Medina Corey"
+            },
+            cardio: {
+                href: "https://www.strava.com/activities/2057738688",
+                distance: "3.5 mi",
+                type: "Treadmill"
+            }
         }
     ]
 }
@@ -97,7 +125,17 @@ var app = new Vue({
             return weeks;
         }
     },
-    methods: {},
+    methods: {
+        tooltip: function(log) {
+            if (new Date(log.date) > new Date()){
+                // in future
+                return log.date;
+            } else {
+                return log.minutes + ' minutes on ' + log.date;
+            }
+            
+        }
+    },
     mounted: function () {
         this.$nextTick(function () {
           // if there's not a hash, default to today
