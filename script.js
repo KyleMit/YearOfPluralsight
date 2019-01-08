@@ -86,6 +86,20 @@ var data = {
                 distance: "3.25 mi",
                 type: "Treadmill"
             }
+        },
+        {
+            date: '1/7/2019',
+            minutes: 30,
+            code: {
+                href: "https://app.pluralsight.com/library/courses/typescript/table-of-contents",
+                title: "TypeScript Fundamentals",
+                author: "Dan Wahlin and John Papa"
+            },
+            cardio: {
+                href: "https://www.strava.com/activities/2062399851",
+                distance: "1.75 mi",
+                type: "Treadmill"
+            }
         }
     ]
 }
